@@ -1,0 +1,19 @@
+[user]
+	name = Antonio de la Torre
+	email = antonio.delatorre@kaleidos.net
+
+[diff]
+    tool = meld
+
+[rerere]
+    enabled = true
+
+
+[color]
+    ui = true
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	yesterday = log --since 1.day.ago --decorate --oneline --author antonio.delatorre@kaleidos.net
+
+[push]
+    default = current
