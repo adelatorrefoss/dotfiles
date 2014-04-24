@@ -165,7 +165,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bindsym $mod+F1 exec ~/bin/unmonitor.sh
-bindsym $mod+F2 exec ~/bin/dosmonitores-dvi-atril.sh
+bindsym $mod+F2 exec ~/bin/dosmonitores-dvi-atril-dcha.sh
 
 exec xfce4-power-manager
 exec gnome-sound-applet
