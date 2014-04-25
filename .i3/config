@@ -156,7 +156,7 @@ exec --no-startup-id xsetroot -solid "#333333"
 bindsym $mod+i move workspace to output left
 bindsym $mod+o move workspace to output right
 
-bindsym $mod+Shift+x exec slock
+bindsym $mod+Shift+x exec i3lock
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
