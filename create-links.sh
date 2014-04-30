@@ -11,5 +11,6 @@ ln -fs bin/dotfiles/.i3/
 ln -fs bin/dotfiles/.profile
 ln -fs bin/dotfiles/.vim/
 ln -fs .vim/vimrc .vimrc
+ln -fs bin/dotfiles/.i3status.conf
 
 
