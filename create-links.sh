@@ -13,3 +13,4 @@ ln -fs bin/dotfiles/.vim/
 ln -fs .vim/vimrc .vimrc
 ln -fs bin/dotfiles/.i3status.conf
 ln -fs bin/dotfiles/.tmux.conf
+ln -fs bin/dotfiles/.zshrc
