@@ -78,3 +78,24 @@ export PATH="/usr/local/heroku/bin:/home/antonio/.gvm/vertx/current/bin:/home/an
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff -w'
+alias gdt='git difftool -y'
+
+alias ga='git add'
+alias gdc='git diff --cached'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gcl='git clone'
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
+
