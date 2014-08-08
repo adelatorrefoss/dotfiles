@@ -51,18 +51,18 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/home/antonio/.gvm/vertx/current/bin:/home/antonio/.gvm/springboot/current/bin:/home/antonio/.gvm/lazybones/current/bin:/home/antonio/.gvm/groovyserv/current/bin:/home/antonio/.gvm/groovy/current/bin:/home/antonio/.gvm/griffon/current/bin:/home/antonio/.gvm/grails/current/bin:/home/antonio/.gvm/gradle/current/bin:/home/antonio/.gvm/glide/current/bin:/home/antonio/.gvm/gaiden/current/bin:/home/antonio/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/"
+export PATH="/home/antonio/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -95,6 +95,20 @@ alias grr='git remote rm'
 alias gp='git pull'
 alias gpr='git pull --rebase'
 alias gcl='git clone'
+
+
+#. /home/antonio/kaleidos/proyectos/Decathlon/grails-env-dec-2.1.5.sh > /dev/null
+
+export GRAILS_OPTS="-Xmx3024M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSize=512m"
+
+# unset gnome keyring to avoid warning errors
+unset GNOME_KEYRING_CONTROL
+
+# android
+export PATH=${PATH}:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
