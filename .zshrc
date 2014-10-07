@@ -96,9 +96,6 @@ alias gp='git pull'
 alias gpr='git pull --rebase'
 alias gcl='git clone'
 
-
-#. /home/antonio/kaleidos/proyectos/Decathlon/grails-env-dec-2.1.5.sh > /dev/null
-
 export GRAILS_OPTS="-Xmx3024M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSize=512m"
 
 # unset gnome keyring to avoid warning errors
