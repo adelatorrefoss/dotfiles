@@ -107,6 +107,9 @@ export PATH=${PATH}:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/andro
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# z
+. /home/antonio/bin/z/z.sh
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
 
