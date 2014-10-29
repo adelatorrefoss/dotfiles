@@ -171,3 +171,6 @@ bindsym $mod+F3 exec ~/bin/setkbmap-en.sh
 exec xfce4-power-manager
 exec gnome-sound-applet
 exec ~/bin/setkbmap-en.sh
+
+exec --no-startup-id nitrogen --restore
+
