@@ -1,1 +1,5 @@
 *.swp
+.emacs.d/.cask
+.emacs.d/custom.el
+.emacs.d/projectile-bookmarks.eld
+

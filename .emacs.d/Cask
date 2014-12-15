@@ -1,0 +1,13 @@
+(source gnu)
+(source melpa)
+(source org)
+
+(depends-on "flatland-black-theme")
+(depends-on "flatland-theme")
+(depends-on "groovy-mode")
+(depends-on "ido-at-point")
+(depends-on "ido-vertical-mode")
+(depends-on "pallet")
+(depends-on "projectile")
+(depends-on "window-number")
+(depends-on "window-numbering")
