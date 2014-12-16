@@ -2,8 +2,11 @@
 (source melpa)
 (source org)
 
+(depends-on "dired+")
 (depends-on "flatland-black-theme")
 (depends-on "flatland-theme")
+(depends-on "flx-ido")
+(depends-on "ggtags")
 (depends-on "groovy-mode")
 (depends-on "ido-at-point")
 (depends-on "ido-vertical-mode")

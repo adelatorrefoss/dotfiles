@@ -3,3 +3,7 @@
 .emacs.d/custom.el
 .emacs.d/projectile-bookmarks.eld
 
+.emacs.d/auto-save-list/
+.emacs.d/eshell/
+.emacs.d/projectile.cache
+
