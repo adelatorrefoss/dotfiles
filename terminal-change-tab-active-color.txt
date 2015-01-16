@@ -1,0 +1,10 @@
+# terminal - to change color of active tab
+# vim ~/.config/gtk-3.0/gtk.css
+
+TerminalWindow .notebook tab {
+    background-color: #e2e0dd;
+}
+
+TerminalWindow .notebook tab:active {
+    background-color: #f2f1f0;
+}

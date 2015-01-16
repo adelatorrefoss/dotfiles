@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/antonio/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/"
+export PATH="/home/antonio/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -96,7 +96,7 @@ alias gp='git pull'
 alias gpr='git pull --rebase'
 alias gcl='git clone'
 
-export GRAILS_OPTS="-Xmx3024M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSize=512m"
+export GRAILS_OPTS="-Xmx3000M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSize=512m"
 
 # unset gnome keyring to avoid warning errors
 unset GNOME_KEYRING_CONTROL
@@ -109,6 +109,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # z
 . /home/antonio/bin/z/z.sh
+
+#java
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"

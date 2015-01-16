@@ -210,3 +210,6 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; inhibit splash screen
+(setq inhibit-splash-screen t)
