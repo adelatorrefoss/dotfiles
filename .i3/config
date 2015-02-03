@@ -167,9 +167,17 @@ bindsym $mod+F1 exec ~/bin/unmonitor.sh
 bindsym $mod+F2 exec ~/bin/dosmonitores-dvi-atril-dcha.sh
 bindsym $mod+F3 exec ~/bin/setkbmap-en.sh
 
+
+#bind multimedia keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 -- +5% && pactl set-sink-mute 1 0
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -- -5% && pactl set-sink-mute 1 0
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute 1 toggle
+#&& killall -SIGUSR1 i3status
+
 # exec xfce4-power-manager
 # exec gnome-sound-applet
 exec ~/bin/setkbmap-en.sh
+exec ~/bin/dosmonitores-dvi-atril-dcha.sh
 
 # don't work
 exec /usr/lib/gnome-settings-daemon
