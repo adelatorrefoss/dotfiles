@@ -34,7 +34,7 @@
 
 ;; C-x C-f - Abrir fichero
 ;; C-x b - Cambiar de buffer
-;; C-x C-b - Mostrar ventada de buffers
+;; C-x C-b - Mostrar ventana de buffers
 
 ;; C-x C-e - Evaluar expresión-s anterior al cursor
 
@@ -53,7 +53,15 @@
 ;; C-x 2 - Split ventana horizontal
 ;; C-x 3 - Split ventana vertical
 
-;; con C-x C- muestras el directorio del fichero actual
+;; C-x C-d muestra el directorio del fichero actual
+
+;; M-z " which deletes everything from point to the next occurance of the " character.
+
+;; C-M-k, aka "kill balanced expression"
+
+;; C-M-SPACE gives you "mark-sexp" which will select to the balancing paren, quote, etc. and then you can C-w or whatever to make it go away.
+
+;; C-z C-z comment lines
 
 (ido-mode t)
 (ido-everywhere t)
@@ -141,7 +149,7 @@
 ;; C-c p j      Find tag in project's TAGS file.
 
 ;; C-c p k      Kills all project buffers.
-;; C-c p D      Opens the root of the project in dired.
+;; C-c p D      Opens the root of the project in dired.;
 ;; C-c p e      Shows a list of recently visited project files.
 ;; C-c p s a    Runs ack on the project. Requires the presence of ack-and-a-half.
 ;; C-c p s s    Runs ag on the project. Requires the presence of ag.el.
@@ -157,7 +165,7 @@
 ;; C-c p m      Run the commander (an interface to run commands with a single key).
 ;; C-c p ESC    Switch to the most recently selected projectile buffer.
 
-
+;; comment lines
 (defun comment-or-uncomment-block ()
   (interactive)
   (let ((start (line-beginning-position))
@@ -173,6 +181,7 @@
                   (point))))
     (comment-or-uncomment-region start end)))
 
+;; comments lines C-z C-z
 (global-unset-key (kbd "C-z"))
 (global-set-key (kbd "C-z C-z") 'comment-or-uncomment-block)
 
@@ -183,7 +192,7 @@
 (add-hook 'dired-mode-hook (lambda ()
                              (ggtags-mode 1)))
 
-;; con C-x C- muestras el directorio del fichero actual
+;; con C-x C-d muestras el directorio del fichero actual
 (require 'dired+)
 
 ;; Mostrar el directorio del proyecto al cambiar de proyecto
@@ -202,7 +211,7 @@
 (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
 
 ;; Nyam-mode
-(nyan-mode)
+(nyan-mode t)
 (nyan-start-animation)
 
 ;; store all backup and autosave files in the tmp dir
@@ -213,3 +222,51 @@
 
 ;; inhibit splash screen
 (setq inhibit-splash-screen t)
+
+;; period single space ends sentence
+(setq sentence-end-double-space nil)
+
+;; replace selection
+(delete-selection-mode 1)
+
+;; evil mode
+(require 'evil)
+(evil-mode 1)
+
+;;Exit insert mode by pressing j and then j quickly
+(require 'key-chord)
+(key-chord-mode 1)
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
+;; Org mode
+(setq org-log-done t)
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(define-key global-map (kbd "C-c o l") 'org-store-link)
+(define-key global-map (kbd "C-c o c") 'org-capture)
+(define-key global-map (kbd "C-c o a") 'org-agenda)
+(define-key global-map (kbd "C-c o b") 'org-iswitchb)
+
+;; auto-complete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+(auto-complete-mode 1)
+
+;; delete trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; gsp syntax like html
+(add-to-list 'auto-mode-alist '("\\.gsp\\'" . html-mode))
+
+;; persistant highlight search in evil
+(require 'highlight)
+(require 'evil-search-highlight-persist)
+(global-evil-search-highlight-persist t)
+
+;; auto-indent
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; auto-paren-mode
+(show-paren-mode 1)
