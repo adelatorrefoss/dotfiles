@@ -189,6 +189,7 @@
 (add-hook 'prog-mode-hook (lambda ()
                             (interactive)
                             (ggtags-mode 1)))
+
 (add-hook 'dired-mode-hook (lambda ()
                              (ggtags-mode 1)))
 
@@ -252,7 +253,9 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
-(auto-complete-mode 1)
+;;(global-auto-complete-mode 1)
+(add-hook 'groovy-mode-hook (lambda ()
+                              (auto-complete-mode 1)))
 
 ;; delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -270,3 +273,31 @@
 
 ;; auto-paren-mode
 (show-paren-mode 1)
+
+;; GIT VersionControl Keybindings
+
+;; C-x v v     vc-next-action -- perform the next logical control operation on file
+;; C-x v i     vc-register -- add a new file to version control
+
+;; C-x v +     vc-update -- Get latest changes from version control
+;; C-x v ~     vc-version-other-window -- look at other revisions
+;; C-x v =     vc-diff -- diff with other revisions
+;; C-x v u     vc-revert-buffer -- undo checkout
+;; C-x v c     vc-cancel-version -- delete the latest revision (often it makes more sense to look at an old revision and check that in again!)
+
+;; C-x v d     vc-directory -- show all files which are not up to date
+;; C-x v g     vc-annotate -- show when each line in a tracked file was added and by whom
+
+;; C-x v s     vc-create-snapshot -- tag all the files with a symbolic name
+;; C-x v r     vc-retrieve-snapshot -- undo checkouts and return to a snapshot with a symbolic name
+
+;; C-x v l     vc-print-log -- show log (not in ChangeLog format)
+;; C-x v a     vc-update-change-log -- update ChangeLog
+
+;; C-x v m     vc-merge
+;; C-x v h     vc-insert-headers
+
+;; M-x vc-resolve-conflicts -- pop up an ediff-merge session on a file with conflict markers
+
+;; evil nerd commenter
+(evilnc-default-hotkeys)
