@@ -253,9 +253,9 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
-;;(global-auto-complete-mode 1)
-(add-hook 'groovy-mode-hook (lambda ()
-                              (auto-complete-mode 1)))
+(global-auto-complete-mode 1)
+;; (add-hook 'groovy-mode-hook (lambda ()
+;;                               (auto-complete-mode 1)))
 
 ;; delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
