@@ -26,12 +26,12 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -94,6 +94,7 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gp='git pull'
 alias gpr='git pull --rebase'
+alias grom='git rebase origin/master'
 alias gcl='git clone'
 
 export GRAILS_OPTS="-Xmx3000M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSize=512m"
