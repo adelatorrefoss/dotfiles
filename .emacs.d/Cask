@@ -9,6 +9,7 @@
 (depends-on "evil")
 (depends-on "evil-nerd-commenter")
 (depends-on "evil-search-highlight-persist")
+(depends-on "evil-surround")
 (depends-on "evil-visualstar")
 (depends-on "flatland-black-theme")
 (depends-on "flatland-theme")

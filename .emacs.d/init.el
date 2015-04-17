@@ -301,3 +301,7 @@
 
 ;; evil nerd commenter
 (evilnc-default-hotkeys)
+
+;; evil surround
+(require 'evil-surround)
+(global-evil-surround-mode 1)
