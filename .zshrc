@@ -103,10 +103,10 @@ export GRAILS_OPTS="-Xmx3000M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSiz
 unset GNOME_KEYRING_CONTROL
 
 # android
-export PATH=${PATH}:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/
+#export PATH=${PATH}:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export PATH="/usr/local/heroku/bin:$PATH"
 
 # z
 . /home/antonio/bin/z/z.sh
@@ -114,6 +114,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #java
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
+
+export NVM_DIR="/home/antonio/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
-

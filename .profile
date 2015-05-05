@@ -22,7 +22,3 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 XDG_CONFIG_HOME=$HOME/.config
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"

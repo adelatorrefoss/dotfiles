@@ -110,7 +110,7 @@ fi
 
 # custom
 
-export EDITOR=vim
+#export EDITOR=vim
 
 #. /home/antonio/kaleidos/proyectos/Decathlon/grails-env-dec-2.1.5.sh > /dev/null
 
@@ -120,13 +120,13 @@ export GRAILS_OPTS="-Xmx3024M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSiz
 unset GNOME_KEYRING_CONTROL
 
 # android
-export PATH=${PATH}:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/
+#export PATH=${PATH}:/opt/android/adt-bundle-linux/sdk/platform-tools/:/opt/android/adt-bundle-linux/sdk/tools/
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
+#[[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export PATH="/usr/local/heroku/bin:$PATH"
 
-export NVM_DIR="/home/antonio/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="/home/antonio/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
