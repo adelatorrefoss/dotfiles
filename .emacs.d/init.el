@@ -230,16 +230,6 @@
 ;; replace selection
 (delete-selection-mode 1)
 
-;; evil mode
-(require 'evil)
-(evil-mode 1)
-
-;;Exit insert mode by pressing j and then j quickly
-(require 'key-chord)
-(key-chord-mode 1)
-(setq key-chord-two-keys-delay 0.5)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-
 ;; Org mode
 (setq org-log-done t)
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
@@ -263,17 +253,32 @@
 ;; gsp syntax like html
 (add-to-list 'auto-mode-alist '("\\.gsp\\'" . html-mode))
 
-;; persistant highlight search in evil
-(require 'highlight)
-(require 'evil-search-highlight-persist)
-(global-evil-search-highlight-persist t)
-
 ;; auto-indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; auto-paren-mode
 (show-paren-mode 1)
 
+;; Expand Region
+(require 'expand-region)
+(global-set-key (kbd "C-'") 'er/expand-region)
+(pending-delete-mode t) ;; once selected you can replace the selection
+
+;; Change inner
+;; M-i " would kill the contents of the string
+;; M-o " would kill the entire string
+;; C-u M-i " means copy instead kill
+(require 'change-inner)
+(global-set-key (kbd "M-i") 'change-inner)
+(global-set-key (kbd "M-o") 'change-outer)
+
+;; Undo Tree
+;; C-x u  visualize undo tree
+(global-undo-tree-mode)
+
+
+
+;; === DEPRECATED === now using magit
 ;; GIT VersionControl Keybindings
 
 ;; C-x v v     vc-next-action -- perform the next logical control operation on file
@@ -299,9 +304,28 @@
 
 ;; M-x vc-resolve-conflicts -- pop up an ediff-merge session on a file with conflict markers
 
-;; evil nerd commenter
-(evilnc-default-hotkeys)
 
-;; evil surround
-(require 'evil-surround)
-(global-evil-surround-mode 1)
+
+;; EVIL ========================================
+
+;; ;; evil mode
+;; (require 'evil)
+;; (evil-mode 0)
+
+;; ;;Exit insert mode by pressing j and then j quickly
+;; (require 'key-chord)
+;; (key-chord-mode 1)
+;; (setq key-chord-two-keys-delay 0.5)
+;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
+;; ;; persistant highlight search in evil
+;; (require 'highlight)
+;; (require 'evil-search-highlight-persist)
+;; (global-evil-search-highlight-persist t)
+
+;; ;; evil nerd commenter
+;; (evilnc-default-hotkeys)
+
+;; ;; evil surround
+;; (require 'evil-surround)
+;; (global-evil-surround-mode 1)
