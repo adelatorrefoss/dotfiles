@@ -165,6 +165,34 @@
 ;; C-c p m      Run the commander (an interface to run commands with a single key).
 ;; C-c p ESC    Switch to the most recently selected projectile buffer.
 
+
+;; EVIL ========================================
+
+;; ;; evil mode
+;; (require 'evil)
+;; (evil-mode 0)
+
+;; ;;Exit insert mode by pressing j and then j quickly
+;; (require 'key-chord)
+;; (key-chord-mode 1)
+;; (setq key-chord-two-keys-delay 0.5)
+;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
+;; ;; persistant highlight search in evil
+;; (require 'highlight)
+;; (require 'evil-search-highlight-persist)
+;; (global-evil-search-highlight-persist t)
+
+;; ;; evil nerd commenter
+;; (evilnc-default-hotkeys)
+
+;; ;; evil surround
+;; (require 'evil-surround)
+;; (global-evil-surround-mode 1)
+
+;; END EVIL MODE CONFIG
+
+
 ;; comment lines
 (defun comment-or-uncomment-block ()
   (interactive)
@@ -206,6 +234,14 @@
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
+
+;; JS indentation 2 spaces
+(setq-default js-indent-level 2)
+
+;; html indent 2 spaces
+(add-hook 'html-mode-hook
+        (lambda ()
+          (set (make-local-variable 'sgml-basic-offset) 2)))
 
 ;; highlight tabs
 (require 'highlight-chars)
@@ -276,56 +312,22 @@
 ;; C-x u  visualize undo tree
 (global-undo-tree-mode)
 
+;; javascript - js2-mode
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(setq js2-basic-offset 2)
+(setq js-indent-level 2)
 
-
-;; === DEPRECATED === now using magit
-;; GIT VersionControl Keybindings
-
-;; C-x v v     vc-next-action -- perform the next logical control operation on file
-;; C-x v i     vc-register -- add a new file to version control
-
-;; C-x v +     vc-update -- Get latest changes from version control
-;; C-x v ~     vc-version-other-window -- look at other revisions
-;; C-x v =     vc-diff -- diff with other revisions
-;; C-x v u     vc-revert-buffer -- undo checkout
-;; C-x v c     vc-cancel-version -- delete the latest revision (often it makes more sense to look at an old revision and check that in again!)
-
-;; C-x v d     vc-directory -- show all files which are not up to date
-;; C-x v g     vc-annotate -- show when each line in a tracked file was added and by whom
-
-;; C-x v s     vc-create-snapshot -- tag all the files with a symbolic name
-;; C-x v r     vc-retrieve-snapshot -- undo checkouts and return to a snapshot with a symbolic name
-
-;; C-x v l     vc-print-log -- show log (not in ChangeLog format)
-;; C-x v a     vc-update-change-log -- update ChangeLog
-
-;; C-x v m     vc-merge
-;; C-x v h     vc-insert-headers
-
-;; M-x vc-resolve-conflicts -- pop up an ediff-merge session on a file with conflict markers
-
-
-
-;; EVIL ========================================
-
-;; ;; evil mode
-;; (require 'evil)
-;; (evil-mode 0)
-
-;; ;;Exit insert mode by pressing j and then j quickly
-;; (require 'key-chord)
-;; (key-chord-mode 1)
-;; (setq key-chord-two-keys-delay 0.5)
-;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-
-;; ;; persistant highlight search in evil
-;; (require 'highlight)
-;; (require 'evil-search-highlight-persist)
-;; (global-evil-search-highlight-persist t)
-
-;; ;; evil nerd commenter
-;; (evilnc-default-hotkeys)
-
-;; ;; evil surround
-;; (require 'evil-surround)
-;; (global-evil-surround-mode 1)
+;; surround function
+;; M-s " <intro> <intro> ;; surround region with "
+(defun surround (begin end open close)
+  "Put OPEN at START and CLOSE at END of the region.
+If you omit CLOSE, it will reuse OPEN."
+  (interactive  "r\nsStart: \nsEnd: ")
+  (when (string= close "")
+    (setq close open))
+  (save-excursion
+    (goto-char end)
+    (insert close)
+    (goto-char begin)
+    (insert open)))
+(global-set-key (kbd "M-s") 'surround)
