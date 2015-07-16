@@ -6,3 +6,5 @@
 .emacs.d/eshell/
 .emacs.d/projectile.cache
 .emacs.d/ac-comphist.dat
+.emacs.d/.mc-lists.el
+.emacs.d/image-dired
