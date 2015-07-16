@@ -213,14 +213,6 @@
 (global-unset-key (kbd "C-z"))
 (global-set-key (kbd "C-z C-z") 'comment-or-uncomment-block)
 
-;; activar ggtags-mode (navegar por tags)
-(add-hook 'prog-mode-hook (lambda ()
-                            (interactive)
-                            (ggtags-mode 1)))
-
-(add-hook 'dired-mode-hook (lambda ()
-                             (ggtags-mode 1)))
-
 ;; con C-x C-d muestras el directorio del fichero actual
 (require 'dired+)
 
@@ -331,3 +323,41 @@ If you omit CLOSE, it will reuse OPEN."
     (goto-char begin)
     (insert open)))
 (global-set-key (kbd "M-s") 'surround)
+
+;; GTAGS
+;; activar ggtags-mode (navegar por tags)
+
+;; (autoload 'gtags-mode "gtags" "" t)
+;; (add-hook 'prog-mode-hook (lambda ()
+;;                             (interactive)
+;;                             (ggtags-mode 1)))
+
+;; (add-hook 'dired-mode-hook (lambda ()
+;;                              (ggtags-mode 1)))
+
+;; M-. : encuentra definiciones
+;; M-] : encuentra referencias
+;; M-* : aborta (vuelve al punto previo de la llamada de manera recursiva)
+;; M-n o M-p : va al siguiente o al anterior TAG
+;; M-o : hace toggle de abbrev completo (en mi caso me funciona ESC + soltar ESC + TAB o Meta+Control+i).
+;; M-{ o M-} : previo o siguiente fichero
+
+
+;; E-TAGS
+;; `M-.’ (‘find-tag’) – find a tag, that is, use the Tags file to look up a definition. If there are multiple tags in the project with the same name, use
+;; `C-u M-.’ to go to the next match.
+;; ‘M-x find-tag-other-window’ – selects the buffer containing the tag’s definition in another window, and move point there.
+;; ‘M-*’ (‘pop-tag-mark’) – jump back
+;; ‘M-x tags-search’ – regexp-search through the source files indexed by a tags file (a bit like ‘grep’)
+;; ‘M-x tags-query-replace’ – query-replace through the source files indexed by a tags file
+;; `M-,’ (‘tags-loop-continue’) – resume ‘tags-search’ or ‘tags-query-replace’ starting at point in a source file
+;; ‘M-x tags-apropos’ – list all tags in a tags file that match a regexp
+;; ‘M-x list-tags’ – list all tags defined in a source file
+
+
+;; Multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
