@@ -120,3 +120,7 @@ export NVM_DIR="/home/antonio/.nvm"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
+
+# virtualenvwrapper activation
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+export PROJECT_HOME=/home/antonio/source/
