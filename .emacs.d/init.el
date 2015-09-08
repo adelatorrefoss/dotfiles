@@ -438,6 +438,12 @@ If you omit CLOSE, it will reuse OPEN."
 ;; C-c C-a t attribute transpose
 
 (require 'web-mode)
+
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-indent-style 2)
+
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -447,6 +453,7 @@ If you omit CLOSE, it will reuse OPEN."
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 
 ;; gsp syntax like html
 (add-to-list 'auto-mode-alist '("\\.gsp\\'" . web-mode))
@@ -477,3 +484,8 @@ If you omit CLOSE, it will reuse OPEN."
               ;; enable flycheck
               (flycheck-select-checker 'jsxhint-checker)
               (flycheck-mode))))
+
+
+;; volatile
+(require 'volatile-highlights)
+(volatile-highlights-mode t)

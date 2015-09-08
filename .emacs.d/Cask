@@ -34,6 +34,7 @@
 (depends-on "sass-mode")
 (depends-on "shelldoc")
 (depends-on "undo-tree")
+(depends-on "volatile-highlights")
 (depends-on "web-mode")
 (depends-on "window-number")
 (depends-on "window-numbering")
