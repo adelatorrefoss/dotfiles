@@ -1,3 +1,5 @@
+;; emacs config
+
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
@@ -94,14 +96,14 @@
 ;; acceso rápido a ventanas con M-<numero>
 (window-numbering-mode 1)
 
-;; esquema de colores: flatland
-(load-theme 'flatland-black)
+;; esquema de colores: theme
+;;(load-theme 'flatland-black)
+;;(load-theme 'tsdh-light t)
+
 
 ;; projectile manual
 ;; flx-ido
 (require 'flx-ido)
-(ido-mode 1)
-(ido-everywhere 1)
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
@@ -307,20 +309,6 @@
 (setq js2-basic-offset 2)
 (setq js-indent-level 2)
 
-;; surround function
-;; M-s " <intro> <intro> ;; surround region with "
-(defun surround (begin end open close)
-  "Put OPEN at START and CLOSE at END of the region.
-If you omit CLOSE, it will reuse OPEN."
-  (interactive  "r\nsStart: \nsEnd: ")
-  (when (string= close "")
-    (setq close open))
-  (save-excursion
-    (goto-char end)
-    (insert close)
-    (goto-char begin)
-    (insert open)))
-(global-set-key (kbd "M-s") 'surround)
 
 ;; GTAGS
 ;; activar ggtags-mode (navegar por tags)
@@ -467,6 +455,7 @@ If you omit CLOSE, it will reuse OPEN."
     ad-do-it))
 
 ;; flycheck
+;; A JSX syntax and style checker based on JSXHint.
 (require 'flycheck)
 (add-hook 'js-mode-hook
           (lambda () (flycheck-mode t)))
@@ -486,6 +475,40 @@ If you omit CLOSE, it will reuse OPEN."
               (flycheck-mode))))
 
 
-;; volatile
+;; volatile-highlights
+;; Highlights changes to the buffer caused by commands such as ‘undo’, ‘yank’/’yank-pop’, etc.
+;; The highlight disappears at the next command.
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
+
+;; rainbow delimiters
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
+;; smex
+;; Smex is a M-x enhancement for Emacs. Built on top of IDO, it provides a convenient interface to
+;; your recently and most frequently used commands. And to all the other commands, too.
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;;;;; CLOJURE
+
+;; paredit
+;; Turn on pseudo-structural editing of Lisp code.
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; cider
+;; The Clojure Interactive Development Environment that Rocks for Emacs
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
