@@ -109,7 +109,7 @@ unset GNOME_KEYRING_CONTROL
 #export PATH="/usr/local/heroku/bin:$PATH"
 
 # z
-. /home/antonio/bin/z/z.sh
+. /home/antonio/bin/dotfiles/z/z.sh
 
 #java
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
