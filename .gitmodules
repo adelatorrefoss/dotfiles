@@ -4,3 +4,6 @@
 [submodule "z"]
 	path = z
 	url = git@github.com:rupa/z.git
+[submodule ".vim"]
+	path = .vim
+	url = git@github.com:adelatorrefoss/vimrc.git
