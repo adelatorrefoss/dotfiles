@@ -512,3 +512,8 @@
 ;; cider
 ;; The Clojure Interactive Development Environment that Rocks for Emacs
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
+
+;; jade
+(require 'sws-mode)
+(require 'jade-mode)
+(add-to-list 'auto-mode-alist '("\\.styl\\'" . sws-mode))
