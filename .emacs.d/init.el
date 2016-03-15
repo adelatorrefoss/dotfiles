@@ -65,6 +65,17 @@
 
 ;; C-z C-z comment lines
 
+
+;; Zap up to char
+(autoload 'zap-up-to-char "misc"
+    "Kill up to, but not including ARGth occurrence of CHAR.
+
+  \(fn arg char)"
+    'interactive)
+(global-set-key "\M-Z" 'zap-up-to-char)
+
+
+
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
@@ -517,3 +528,7 @@
 (require 'sws-mode)
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.styl\\'" . sws-mode))
+
+;; dot-mode
+(require 'dot-mode)
+(add-hook 'find-file-hooks 'dot-mode-on)
