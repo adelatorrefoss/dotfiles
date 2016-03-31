@@ -108,6 +108,9 @@ unset GNOME_KEYRING_CONTROL
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
 
+#cask
+export PATH="$HOME/.cask/bin:$PATH"
+
 # z
 . /home/antonio/bin/dotfiles/z/z.sh
 
@@ -122,5 +125,5 @@ export NVM_DIR="/home/antonio/.nvm"
 [[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
 
 # virtualenvwrapper activation
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+# source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 export PROJECT_HOME=/home/antonio/source/
