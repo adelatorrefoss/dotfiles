@@ -124,3 +124,5 @@ export NVM_DIR="/home/antonio/.nvm"
 # virtualenvwrapper activation
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 export PROJECT_HOME=/home/antonio/source/
+
+alias docker-remove-all-containers="docker ps -aq | xargs docker stop && docker ps -aq | xargs docker rm"
