@@ -1,3 +1,7 @@
+;;; package --- Summary
+;;; Comentary:
+;;; Code
+
 ;; emacs config
 
 (require 'cask "~/.cask/cask.el")
@@ -559,6 +563,7 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook          #'enable-paredit-mode)
 
 ;; cider
 ;; The Clojure Interactive Development Environment that Rocks for Emacs
@@ -581,7 +586,7 @@
 (require 'editorconfig)
 (editorconfig-mode 1)
 
-;; font
+;; font, config ligatures
 (when (window-system)
   (set-frame-font "Fira Code-12"))
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
@@ -592,7 +597,7 @@
                (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
                (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
                (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-               (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+               ;; (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
                (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
                (48 . ".\\(?:x[a-zA-Z]\\)")
                (58 . ".\\(?:::\\|[:=]\\)")
@@ -617,4 +622,10 @@
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 
-;;;;
+;; eldoc
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
+
+;;; end

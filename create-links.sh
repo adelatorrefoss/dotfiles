@@ -17,7 +17,13 @@ ln -fs ~/bin/dotfiles/.zshrc
 ln -fs ~/bin/dotfiles/.oh-my-zsh
 ln -fs ~/bin/dotfiles/.emacs.d
 ln -fs ~/bin/dotfiles/.globalrc
+
 mkdir ~/.grails
 cd ~/.grails
 ln -fs ~/bin/dotfiles/.grails/settings.groovy
+
+mkdir ~/.lein
+cd ~/.lein
+ln -fs ~/bin/dotfiles/emacs/lein/profiles.clj
+
 cd ~
