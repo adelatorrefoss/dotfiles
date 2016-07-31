@@ -118,12 +118,11 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export NVM_DIR="/home/antonio/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
-
 # virtualenvwrapper activation
 #source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 export PROJECT_HOME=/home/antonio/source/
+
+alias docker-remove-all-containers="docker ps -aq | xargs docker stop && docker ps -aq | xargs docker rm"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/antonio/.sdkman"
