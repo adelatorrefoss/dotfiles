@@ -130,3 +130,7 @@ unset GNOME_KEYRING_CONTROL
 
 #export NVM_DIR="/home/antonio/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/antonio/.sdkman"
+[[ -s "/home/antonio/.sdkman/bin/sdkman-init.sh" ]] && source "/home/antonio/.sdkman/bin/sdkman-init.sh"

@@ -22,3 +22,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 XDG_CONFIG_HOME=$HOME/.config
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/antonio/.sdkman"
+[[ -s "/home/antonio/.sdkman/bin/sdkman-init.sh" ]] && source "/home/antonio/.sdkman/bin/sdkman-init.sh"

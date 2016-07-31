@@ -112,7 +112,7 @@ unset GNOME_KEYRING_CONTROL
 . /home/antonio/bin/dotfiles/z/z.sh
 
 #java
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 
 export NVM_DIR="/home/antonio/.nvm"
@@ -122,5 +122,9 @@ export NVM_DIR="/home/antonio/.nvm"
 [[ -s "/home/antonio/.gvm/bin/gvm-init.sh" ]] && source "/home/antonio/.gvm/bin/gvm-init.sh"
 
 # virtualenvwrapper activation
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+#source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 export PROJECT_HOME=/home/antonio/source/
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/antonio/.sdkman"
+[[ -s "/home/antonio/.sdkman/bin/sdkman-init.sh" ]] && source "/home/antonio/.sdkman/bin/sdkman-init.sh"
