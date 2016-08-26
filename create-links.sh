@@ -26,4 +26,8 @@ mkdir ~/.lein
 cd ~/.lein
 ln -fs ~/bin/dotfiles/emacs/lein/profiles.clj
 
+#mkdir ~/.gradle
+#cd ~/.gradle
+#ln -fs ~/bin/dotfiles/gradle.properties
+
 cd ~
