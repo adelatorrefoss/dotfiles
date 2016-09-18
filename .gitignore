@@ -10,3 +10,4 @@
 .emacs.d/image-dired
 .emacs.d/smex-items
 .emacs.d/ido.last
+.i3status.conf
