@@ -112,7 +112,7 @@
 (window-numbering-mode 1)
 
 ;; esquema de colores: theme
-;;(load-theme 'flatland-black)
+(load-theme 'flatland-black)
 ;;(load-theme 'tsdh-light t)
 
 
@@ -608,5 +608,8 @@
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
+
+;; pug-mode
+(add-to-list 'auto-mode-alist '("\\.pug\\'" . pug-mode))
 
 ;;; end
