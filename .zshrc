@@ -94,8 +94,9 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gp='git pull'
 alias gpr='git pull --rebase'
-alias grom='git rebase origin/master'
 alias gcl='git clone'
+alias grom='git rebase origin/master'
+alias grod='git rebase origin/develop'
 
 export GRAILS_OPTS="-Xmx3000M -Xms1024M -server -XX:PermSize=512m -XX:MaxPermSize=512m"
 
@@ -125,6 +126,12 @@ export PROJECT_HOME=/home/antonio/source/
 alias docker-remove-all-containers="docker ps -aq | xargs docker stop && docker ps -aq | xargs docker rm"
 
 export PATH="$HOME/.cask/bin:$PATH"
+
+# SETS-project
+if [ -f ~/strong-oracle.rc ]; then
+    source ~/strong-oracle.rc
+fi
+# END SETS-project
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/antonio/.sdkman"
