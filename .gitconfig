@@ -22,4 +22,4 @@
 #[merge]
 #	tool = kdiff3
 [merge]
-	tool = meld
+	tool = kdiff3
