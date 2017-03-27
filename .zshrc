@@ -133,6 +133,9 @@ if [ -f ~/strong-oracle.rc ]; then
 fi
 # END SETS-project
 
+export PATH="/home/antonio/Android/Sdk/platform-tools:/home/antonio/Android/Sdk/tools:$PATH"
+
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/antonio/.sdkman"
 [[ -s "/home/antonio/.sdkman/bin/sdkman-init.sh" ]] && source "/home/antonio/.sdkman/bin/sdkman-init.sh"
