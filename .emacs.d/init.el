@@ -648,3 +648,4 @@
 
 (js2r-add-keybindings-with-prefix "C-c C-m")
 ;; eg. extract function with `C-c C-m ef`.
+(put 'upcase-region 'disabled nil)

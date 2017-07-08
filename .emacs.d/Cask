@@ -36,6 +36,8 @@
 (depends-on "js2-refactor")
 (depends-on "less-css-mode")
 (depends-on "magit")
+(depends-on "markdown-mode+")
+(depends-on "markdown-preview-mode")
 (depends-on "material-theme")
 (depends-on "multi-web-mode")
 (depends-on "multiple-cursors")
