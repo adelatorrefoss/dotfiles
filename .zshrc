@@ -135,8 +135,8 @@ fi
 
 export PATH="/home/antonio/Android/Sdk/platform-tools:/home/antonio/Android/Sdk/tools:$PATH"
 
+export ANDROID_HOME=/home/antonio/Android/Sdk
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/antonio/.sdkman"
 [[ -s "/home/antonio/.sdkman/bin/sdkman-init.sh" ]] && source "/home/antonio/.sdkman/bin/sdkman-init.sh"
-
